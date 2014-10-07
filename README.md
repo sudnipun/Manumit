@@ -1,2 +1,6 @@
 Manumit
 =======
+
+Vision
+
+Target Audience
