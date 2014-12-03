@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Landing Page - Start Bootstrap Theme</title>
+
+    <!-- Bootstrap Core CSS -->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+   <link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/themes/smoothness/jquery-ui.css" />
+<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/mustache.js/0.8.1/mustache.min.js" type="text/javascript" charset="utf-8"></script>
+
+<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+
+<script src="http://ajax.aspnetcdn.com/ajax/modernizr/modernizr-2.6.2.js" type="text/javascript" charset="utf-8"></script>
+<script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="jquery.prettySocial.min.js"></script>
+
+<link href="http://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.css" rel="stylesheet">
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/jquery-ui-1.10.3.custom.css" type="text/css" charset="utf-8">
+<link rel="stylesheet" href="./css/timeline.css" type="text/css" charset="utf-8">
+<link rel="stylesheet" href="./css/timeglider.datepicker.css" type="text/css" charset="utf-8">
+    
+    <!-- Custom CSS -->
+    <link href="css/landing-page.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="./css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+<script type=text/JavaScript>
+jQuery(document).ready(function($){
+var $timeline_block = $('.cd-timeline-block');
+ 
+//hide timeline blocks which are outside the viewport
+$timeline_block.each(function(){
+if($(this).offset().top > $(window).scrollTop()+$(window).height()*0.75) {
+$(this).find('.cd-timeline-img, .cd-timeline-content').addClass('is-hidden');
+}
+});
+ 
+//on scolling, show/animate timeline blocks when enter the viewport
+$(window).on('scroll', function(){
+$timeline_block.each(function(){
+if( $(this).offset().top <= $(window).scrollTop()+$(window).height()*0.75 && $(this).find('.cd-timeline-img').hasClass('is-hidden') ) {
+$(this).find('.cd-timeline-img, .cd-timeline-content').removeClass('is-hidden').addClass('bounce-in');
+}
+});
+});
+
+});
+</script>
+
+<!-- mustache -->
+
+<script type=text/JavaScript>
+       $(document).ready(function(){
+        var view = {
+          name : "Joe",
+          occupation : "Web Developer"
+        };
+ 
+      $("#templates").load("./templates/template.html #template1",function(){
+        var template = document.getElementById('template1').innerHTML;
+        var output = Mustache.render(template, view);
+        $("#person").html(output);
+      
+});
+
+      });
+    </script>
+</head>
+
+<body >
+ 
+
+ 
+    <!-- Navigation -->
+    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+        <div class="row">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header col-md-4">
+                <a class="navbar-brand" href="#">Manumit </a>
+
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+              <!--    <div class="form-group" id="comments">-->                  
+                            
+           <div class="pull-right">
+          
+
+         <div class="collapse navbar-collapse col-md-4" id="bs-example-navbar-collapse-1">
+                <!-- <ul class="nav navbar-nav navbar-right"> -->
+                <form class=" pull-right form-inline navbar-right" role="form">
+                    <div class="form-group">
+
+                        <div class="input-group">
+                           <!-- <div class="input-group-addon">Sign up for updates</div> -->
+                            <input class="form-control" type="email" placeholder="Enter email">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="sr-only" for="exampleInputPassword2">Password</label>
+                        <input type="password" class="form-control" id="exampleInputPassword2" placeholder="Password">
+                    </div>
+                    <button type="submit" class="btn btn-default">Sign up</button>
+                </form>
+            </div>
+
+              <div class="btn-group btn-group-sm col-md-4">
+
+             <div class="col-md-3">
+              <a href="https://github.com/IronSummitMedia/startbootstrap" class="btn btn-default btn-sm"><i class="fa fa-facebook fa-fw"></i> <span class="network-name"></span></a>
+             </div>
+             <div class="col-md-3">
+                <a href="#" class="btn btn-default btn-sm"><i class="fa fa-linkedin fa-fw"></i> <span class="network-name"></span></a>
+
+             </div>  
+             <div class="col-md-3">
+                <a href="https://twitter.com/SBootstrap" class="btn btn-default btn-sm"><i class="fa fa-twitter fa-fw"></i> <span class="network-name"></span></a>
+            </div> 
+         </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        </div>
+        <!-- /.container -->
+    </nav>
+ 
+    <!-- Header -->
+    <div class="intro-header">
+
+        <div class="container">
+
+            
+               
+                    <div class="row intro-message col-lg-12">
+                        <!--<h2>A platform to .... </h2>
+<hr class="intro-divider">
+                    -->
+                       <div class="header">
+                    <h1>Be an agent of change!</h1>
+                    
+                </div>
+                        
+                        <!--  <ul class="list-inline intro-social-buttons">-->
+<div class="row main-content">
+                
+                    
+
+               <!--   
+               <div class="col-xs-6 col-md-4 col-sm-2 hidden-xs">    
+                 <div class="row row-left subject">
+                           
+                            <div class="col-xs-12 table-content border-bot">
+                                <i class="how-it-works-icon icon-briefcase"></i>
+                                <h3 class="hidden-sm">Dealflow</h3>
+                            </div>
+                            <div class="col-xs-12 table-content border-bot">
+                                <i class="how-it-works-icon icon-meter"></i>
+                                <h3 class="hidden-sm">Extras</h3>
+                            </div>
+                            <div class="col-xs-12 table-content border-bot">
+                                <i class="how-it-works-icon icon-contact-card"></i>
+                                <h3 class="hidden-sm">Tools</h3>
+
+                            </div>
+                            <div class="col-xs-12 table-content border-bot">
+                                <i class="how-it-works-icon icon-support"></i>
+                                <h3 class="hidden-sm">Support</h3>
+                                
+                            </div>
+                            <div class="col-xs-12 table-content">
+                                <i class="how-it-works-icon icon-tools"></i>
+                                <h3 class="hidden-sm">Tools</h3>
+                            </div>
+
+                        </div>
+                    </div>  
+
+
+
+                 <!--   <div class="col-xs-16 col-md-3 col-sm-5">
+                        <div class="row">
+                            <div class="col-xs-12 table-content border-bot darker">
+                                <h3 class="">For Collaborators</h3>
+                            </div>
+                            <hr class="intro-divider">
+                            <div class="col-xs-12 table-content border-bot">
+                                <i class="how-it-works-icon icon-briefcase small-icon"></i>
+                                <p>Find people to work together and build cool stuff!</p>
+                            </div>
+                            <div class="col-xs-12 table-content border-bot">
+                                <i class="how-it-works-icon icon-meter small-icon"></i>
+                                <p>Blog</p>
+                            </div>
+                            <div class="col-xs-12 table-content border-bot">
+                                <i class="how-it-works-icon icon-contact-card small-icon"></i>
+                                <p>Track projects and connect with professionals</p>
+                            </div>
+                            <div class="col-xs-12 table-content border-bot">
+                                <i class="how-it-works-icon icon-support small-icon"></i>
+                                <h4>Write blogs</h4>
+                            </div>
+                            <div class="col-xs-12 table-content border-bot darker">
+                                <i class="how-it-works-icon icon-tools small-icon"></i>
+                                <h4>24/7 access to financials and diligence documents</h4>
+                            </div>
+                            <div class="col-xs-12 table-content">
+                                <a class="btn btn-xs btn-default" href="/join/?from=home-how-it-works">Sign up now</a> <a href="/getting-started/?from=home-how-it-works">More info</a>
+                            </div>
+                        </div>
+                    </div> -->
+                    <h3>Here's How</h3>
+                    <div class="col-xs-6 col-md-6 col-sm-5">
+                        <div class="row">
+                            <div class="col-xs-12 table-content border-bot darker">
+                                <h3 class="">For Professionals</h3>
+                            </div>
+                            <hr class="intro-divider">
+                            <div class="col-xs-12 table-content border-bot">
+                                <i class="how-it-works-icon icon-briefcase small-icon"></i>
+                                <h4>Blog, tutor or work</h4>
+                                
+                            </div>
+                            <div class="col-xs-12 table-content border-bot">
+                                <i class="how-it-works-icon icon-meter small-icon"></i>
+                                <h4>Connect with professionals all around</h4>
+                            </div>
+                            <div class="col-xs-12 table-content border-bot">
+                                <i class="how-it-works-icon icon-contact-card small-icon"></i>
+                                <h4>Get liked and get reputed</h4>
+
+                            </div>
+                           
+                            <div class="col-xs-12 table-content">
+                                <a class="btn btn-sm btn-primary" href="/join/?from=home-how-it-works">Apply </a> 
+                                
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-6 col-md-6 col-sm-5 how-it-works">
+                        <div class="row">
+                            <div class="col-xs-12 table-content border-bot darker">
+                                <h3 class="section">For Employers</h3>
+                            </div>
+                            <hr class="intro-divider">
+                            <div class="col-xs-12 table-content border-bot">
+                                <i class="how-it-works-icon icon-briefcase small-icon"></i>
+                                <h4>Post a problem or find professionals</h4>
+                            </div>
+                            <div class="col-xs-12 table-content border-bot">
+                                <i class="how-it-works-icon icon-meter small-icon"></i>
+                                <h4>Agree upon project succces factors</h4>
+                            </div>
+                            <div class="col-xs-12 table-content border-bot">
+                                <i class="how-it-works-icon icon-contact-card small-icon"></i>
+                                <h4>Monitoring dashboard to keep track of projects</h4>
+                            </div>
+                           
+                            <div class="col-xs-12 table-content">
+                                <a class="btn btn-sm btn-primary" href="/join/?from=home-how-it-works&amp;next=/join/company/">Post a job now!</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                          
+
+                            <div class="row cards">
+                             <div class="panel panel-default col-md-4">
+          <div class="panel-heading"><a href="#" class="pull-right">View all</a> <h4>Conversation History</h4></div>
+            <div class="panel-body">
+              <div class="list-group">
+                <a href="http://bootply.com/tagged/modal" class="list-group-item">Modal / Dialog</a>
+                <a href="http://bootply.com/tagged/datetime" class="list-group-item">Datetime Examples</a>
+                <a href="http://bootply.com/tagged/datatable" class="list-group-item">Data Grids</a>
+              </div>
+            </div>
+        </div>
+
+           <div class="panel panel-default col-md-4">
+           <div class="panel-heading"><a href="#" class="pull-right">View all</a> <h4>Task Manager</h4></div>
+            <div class="panel-body">
+              <img src="//placehold.it/150x150" class="img-circle pull-right"> <a href="#">Free @Bootply</a>
+                            <hr>
+              <ul class="list-unstyled"><li><a href="http://www.bootply.com/templates">Dashboard</a></li><li><a href="http://www.bootply.com/templates">Darkside</a></li><li><a href="http://www.bootply.com/templates">Greenfield</a></li></ul>
+            </div>
+         </div> 
+
+         <div class="panel panel-default col-md-4">
+          <div class="panel-heading"><a href="#" class="pull-right">View all</a> <h4>Test before you Hire</h4></div>
+            <div class="panel-body">
+              <div class="list-group">
+                <a href="http://bootply.com/tagged/modal" class="list-group-item">Modal / Dialog</a>
+                <a href="http://bootply.com/tagged/datetime" class="list-group-item">Datetime Examples</a>
+                <a href="http://bootply.com/tagged/datatable" class="list-group-item">Data Grids</a>
+              </div>
+            </div>
+        </div>
+
+    </div>
+
+    
+                        
+                    </div>
+                </div>
+
+            </div>
+            <!-- /.container -->
+
+       
+        <!-- /.intro-header -->
+
+        <!-- Page Content -->
+
+       
+        <!-- /.content-section-a -->
+
+     
+        <!-- /.content-section-b 
+
+        <div class="content-section-a">
+
+            <div class="container">
+
+                <div class="row">
+                    <div class="col-lg-5 col-sm-6">
+                        <hr class="section-heading-spacer">
+                        <div class="clearfix"></div>
+                        <h2 class="section-heading">HIRE</h2>
+                        <p class="lead">
+                            <ul>Looking for someone to work on a project?</ul>
+                            <ul>Hire a Professional</ul>
+                            <ul>
+                                <ul>Make payment</ul>
+                        </p>
+                    </div>
+                    <div class="col-lg-5 col-lg-offset-2 col-sm-6">
+                        <img class="img-responsive" src="img/hire.jpg" alt="">
+                    </div>
+                </div>
+
+            </div>
+            <!-- /.container -->
+
+        </div>
+        <!-- /.content-section-a -->
+
+        <div class="banner">
+
+            <div class="container">
+
+                <div class="row">
+                   <section id="cd-timeline" class="cd-container">
+  
+    <!-- cd-timeline-img -->
+      <p id="person" class="cd-timeline-block"></p>
+    <div id="templates" style="display: none;"></div>
+    <!--
+    <div class="cd-timeline-content">
+      <h2>Title of section 1</h2>
+      <p> Content 1 </p>
+      <a href="#0" class="cd-read-more">Read more</a> <span class="cd-date">Jan 14</span> 
+   </div> -->
+
+    <!-- cd-timeline-content -->
+  
+
+
+  <!-- cd-timeline-block -->
+   
+<!--<div class="cd-timeline-block">
+    <div class="cd-timeline-img cd-movie"> <img src="cd-icon-movie.svg" alt="Movie"> </div>
+    <!-- cd-timeline-img -->
+     
+  <!--  <div class="cd-timeline-content">
+      <h2>Title of section 2</h2>
+      <p> Content 2 </p>
+      <a href="#0" class="cd-read-more">Read more</a> <span class="cd-date">Jan 18</span> </div>
+    <!-- cd-timeline-content -->
+<!--   </div>
+  <!-- cd-timeline-block -->
+   
+<!--   <div class="cd-timeline-block">
+    <div class="cd-timeline-img cd-picture"> <img src="cd-icon-picture.svg" alt="Picture"> </div>
+    <!-- cd-timeline-img -->
+     
+ <!--    <div class="cd-timeline-content">
+      <h2>Title of section 3</h2>
+      <p> Content 3 </p>
+      <a href="#0" class="cd-read-more">Read more</a> <span class="cd-date">Jan 24</span> </div>
+    <!-- cd-timeline-content -->
+<!--   </div>
+  <!-- cd-timeline-block -->
+   
+<!--   <div class="cd-timeline-block">
+    <div class="cd-timeline-img cd-location"> <img src="cd-icon-location.svg" alt="Location"> </div>
+    <!-- cd-timeline-img -->
+     
+<!--     <div class="cd-timeline-content">
+      <h2>Title of section 4</h2>
+      <p> Content 4 </p>
+      <a href="#0" class="cd-read-more">Read more</a> <span class="cd-date">Feb 14</span> </div>
+    <!-- cd-timeline-content -->
+<!--   </div>
+  <!-- cd-timeline-block -->
+   
+<!--   <div class="cd-timeline-block">
+    <div class="cd-timeline-img cd-location"> <img src="cd-icon-location.svg" alt="Location"> </div>
+    <!-- cd-timeline-img -->
+     
+ <!--    <div class="cd-timeline-content">
+      <h2>Title of section 5</h2>
+      <p> Content 5 </p>
+      <a href="#0" class="cd-read-more">Read more</a> <span class="cd-date">Feb 18</span> </div>
+    <!-- cd-timeline-content -->
+<!--   </div>
+
+
+  <!-- cd-timeline-block -->
+   
+<!--   <div class="cd-timeline-block">
+    <div class="cd-timeline-img cd-movie"> <img src="cd-icon-movie.svg" alt="Movie"> </div>
+    <!-- cd-timeline-img -->
+     
+ <!--    <div class="cd-timeline-content">
+      <h2>Final Section</h2>
+      <p> Content 6 </p>
+      <a href="#0" class="cd-read-more">Read more</a> <span class="cd-date">Feb 26</span> </div>
+    <!-- cd-timeline-content -->
+ <!--  </div>
+  <!-- cd-timeline-block -->
+</section>
+                </div>
+
+            </div>
+            <!-- /.container -->
+
+        </div>
+        <!-- /.banner -->
+
+
+
+
+        <!-- Footer -->
+        <footer>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <ul class="list-inline">
+                            <li>
+                                <a href="#home">Home</a>
+                            </li>
+                            <li class="footer-menu-divider">&sdot;</li>
+                            <li>
+                                <a href="#about">About</a>
+                            </li>
+                            <li class="footer-menu-divider">&sdot;</li>
+                            <li>
+                                <a href="#services">Services</a>
+                            </li>
+                            <li class="footer-menu-divider">&sdot;</li>
+                            <li>
+                                <a href="#contact">Contact</a>
+                            </li>
+                        </ul>
+                        <p class="copyright text-muted small">Copyright &copy; Your Company 2014. All Rights Reserved</p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <!-- jQuery Version 1.11.0 -->
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+
+</body>
+
+</html>
